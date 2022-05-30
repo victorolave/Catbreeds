@@ -1,16 +1,16 @@
 import 'dart:convert';
-
 import 'package:catbreeds/constants/api.dart';
 import 'package:catbreeds/models/breed.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+
 class BreedController extends GetxController {
 
   var breed;
   String image = '';
-
   bool loading = true;
 
+  // Method to get breed data.
   Future getBreed() async {
     final url = Uri.parse(api + '/' + Get.parameters['id'].toString());
     final response = await http.get(url, headers: {"x-api-key": key});
@@ -25,6 +25,7 @@ class BreedController extends GetxController {
     }
   }
 
+  // Method to get bree reference image
   Future getImage() async {
     final url = Uri.parse('https://api.thecatapi.com/v1/images/' + breed.referenceImageId);
     final response = await http.get(url, headers: {"x-api-key": key});

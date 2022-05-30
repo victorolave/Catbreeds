@@ -1,11 +1,8 @@
-
 import 'package:catbreeds/controllers/home_controller.dart';
 import 'package:catbreeds/models/breed.dart';
 import 'package:catbreeds/widgets/breed_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);

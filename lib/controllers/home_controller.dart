@@ -8,11 +8,10 @@ import 'package:http/http.dart' as http;
 class HomeController extends GetxController {
 
   bool loading = true;
-
   var breedData = <Breed>[].obs;
-
   String search = '';
 
+  // Method to get breeds list;
   Future getBreeds([query = '']) async {
     final url = Uri.parse(api + query);
     final response = await http.get(url, headers: {"x-api-key": key});
@@ -26,9 +25,9 @@ class HomeController extends GetxController {
     } else {
       throw Exception('Failed to load breeds.');
     }
-
   }
 
+  // Method to handle search input.
   Future handleSearch(String text) async {
     search = text;
     if (search.length >= 3) {

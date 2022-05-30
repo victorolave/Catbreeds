@@ -20,7 +20,7 @@ class BreedCard extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(20)),
+            borderRadius: const BorderRadius.all(Radius.circular(20)),
             image: DecorationImage(
               image: NetworkImage('https://cdn2.thecatapi.com/images/' + breed.referenceImageId + '.jpg'),
               fit: BoxFit.cover,
@@ -45,13 +45,13 @@ class BreedCard extends StatelessWidget {
             ),
             const SizedBox(height: 130),
             Container(
-              padding: EdgeInsets.symmetric(vertical: 10),
+              padding: const EdgeInsets.symmetric(vertical: 10),
               width: MediaQuery.of(context).size.width,
               color: Colors.white,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(breed.name, style: TextStyle(fontSize: 30, color: Colors.deepPurple, fontWeight: FontWeight.bold),),
+                  Text(breed.name, style: const TextStyle(fontSize: 30, color: Colors.deepPurple, fontWeight: FontWeight.bold),),
                   RichText(
                     text: TextSpan(
                       children: [
@@ -62,12 +62,12 @@ class BreedCard extends StatelessWidget {
                             color: Color(0xFF325483),
                           ),
                         ),
-                        TextSpan(text: ' ' + breed.origin, style: TextStyle(color: Color(0xFF325483), fontSize: 18)),
+                        TextSpan(text: ' ' + breed.origin, style: const TextStyle(color: Color(0xFF325483), fontSize: 18)),
                       ],
                     ),
                   ),
-                  Divider(),
-                  Text("Intelligence: " + breed.intelligence.toString() , style: TextStyle(color: Color(0xFF325483), fontSize: 18),),
+                  const Divider(),
+                  Text("Intelligence: " + breed.intelligence.toString() , style: const TextStyle(color: Color(0xFF325483), fontSize: 18),),
                 ],
               ),
             )

@@ -82,7 +82,7 @@ class Breed extends StatelessWidget {
                                     text: TextSpan(
                                       children: [
                                         const WidgetSpan(
-                                          child: const Icon(
+                                          child: Icon(
                                             Icons.location_on,
                                             size: 20,
                                             color: Color(0xFF325483),
@@ -130,9 +130,11 @@ class Breed extends StatelessWidget {
                                         ),
                                         Row(
                                           children: [
-                                            Text(
-                                              controller.breed.temperament.toString(),
-                                            ),
+                                            Expanded(
+                                              child: Text(
+                                                controller.breed.temperament.toString(),
+                                              )
+                                            )
                                           ],
                                         ),
                                       ],
@@ -223,7 +225,7 @@ class Breed extends StatelessWidget {
                                       children: [
                                         const TextSpan(
                                             text: 'Child Friendly: ',
-                                            style: const TextStyle(
+                                            style: TextStyle(
                                               color: Colors.deepPurple,
                                             )),
                                         TextSpan(
@@ -263,7 +265,7 @@ class Breed extends StatelessWidget {
                                       children: [
                                         const TextSpan(
                                             text: 'Stranger Friendly: ',
-                                            style: const TextStyle(
+                                            style: TextStyle(
                                               color: Colors.deepPurple,
                                             )),
                                         TextSpan(
@@ -303,7 +305,7 @@ class Breed extends StatelessWidget {
                                       children: [
                                         const TextSpan(
                                             text: 'Social Needs: ',
-                                            style: const TextStyle(
+                                            style: TextStyle(
                                               color: Colors.deepPurple,
                                             )),
                                         TextSpan(
@@ -320,7 +322,7 @@ class Breed extends StatelessWidget {
                                       children: [
                                         const TextSpan(
                                             text: 'Grooming: ',
-                                            style: const TextStyle(
+                                            style: TextStyle(
                                               color: Colors.deepPurple,
                                             )),
                                         TextSpan(
@@ -350,7 +352,7 @@ class Breed extends StatelessWidget {
                                         ),
                                         Row(
                                           children: [
-                                            Text(controller.breed.lifeSpan),
+                                            Text(controller.breed.lifeSpan + ' Years'),
                                           ],
                                         ),
                                       ],
@@ -367,8 +369,7 @@ class Breed extends StatelessWidget {
                                   },
                                   child: const Text(
                                     'CFA Page',
-                                    style:
-                                        const TextStyle(fontWeight: FontWeight.bold),
+                                    style: TextStyle(fontWeight: FontWeight.bold),
                                   ),
                                 ),
                               ),
@@ -395,8 +396,7 @@ class Breed extends StatelessWidget {
                                   },
                                   child: const Text(
                                     'VCA Hospitals Page',
-                                    style:
-                                        const TextStyle(fontWeight: FontWeight.bold),
+                                    style: TextStyle(fontWeight: FontWeight.bold),
                                   ),
                                 ),
                               ),
@@ -422,7 +422,7 @@ class Breed extends StatelessWidget {
                     )
                   ],
                 )
-              : Center(child: const Text("Loading...", style: TextStyle(color: Colors.deepPurple, fontSize: 30, fontWeight: FontWeight.bold),)),
+              : const Center(child: Text("Loading...", style: TextStyle(color: Colors.deepPurple, fontSize: 30, fontWeight: FontWeight.bold),)),
         );
       },
     );

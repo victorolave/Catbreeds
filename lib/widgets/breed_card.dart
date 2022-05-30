@@ -22,7 +22,7 @@ class BreedCard extends StatelessWidget {
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(20)),
             image: DecorationImage(
-              image: NetworkImage(breed.image.isEmpty ? '' : breed.image),
+              image: NetworkImage('https://cdn2.thecatapi.com/images/' + breed.referenceImageId + '.jpg'),
               fit: BoxFit.cover,
             ),
             boxShadow: [

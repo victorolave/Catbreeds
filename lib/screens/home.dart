@@ -55,7 +55,7 @@ class Home extends StatelessWidget {
                           BreedCard(breed: breed)
                       ],
                     ),
-                  ) : Text("Loading")
+                  ) : Center(child: const Text("Loading...", style: TextStyle(color: Colors.deepPurple, fontSize: 30, fontWeight: FontWeight.bold),))
               ],
             )
           ),

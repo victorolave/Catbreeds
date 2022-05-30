@@ -1,7 +1,10 @@
-import 'package:catbreeds/controllers/HomeController.dart';
+
+import 'package:catbreeds/controllers/home_controller.dart';
 import 'package:catbreeds/widgets/Breed.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -42,7 +45,7 @@ class Home extends StatelessWidget {
                   height: MediaQuery.of(context).size.height - 230,
                   child: ListView(
                     scrollDirection: Axis.vertical,
-                    children: [
+                    children: const [
                       Breed(),
                     ],
                   ),

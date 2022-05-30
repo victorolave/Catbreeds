@@ -1,8 +1,12 @@
+import 'package:catbreeds/models/breed.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Breed extends StatelessWidget {
-  const Breed({Key? key}) : super(key: key);
+class BreedCard extends StatelessWidget {
+
+  final Breed breed;
+
+  const BreedCard({Key? key, required this.breed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +21,9 @@ class Breed extends StatelessWidget {
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(20)),
-            image: const DecorationImage(
-              image: NetworkImage(
-                  'https://cdn2.thecatapi.com/images/0XYvRd7oD.jpg'),
-              fit: BoxFit.fitWidth,
+            image: DecorationImage(
+              image: NetworkImage(breed.image.isEmpty ? '' : breed.image),
+              fit: BoxFit.cover,
             ),
             boxShadow: [
               BoxShadow(
@@ -48,23 +51,23 @@ class Breed extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Abyssinian", style: TextStyle(fontSize: 30, color: Colors.deepPurple, fontWeight: FontWeight.bold),),
+                  Text(breed.name, style: TextStyle(fontSize: 30, color: Colors.deepPurple, fontWeight: FontWeight.bold),),
                   RichText(
-                    text: const TextSpan(
+                    text: TextSpan(
                       children: [
-                        WidgetSpan(
+                        const WidgetSpan(
                           child: Icon(
                             Icons.location_on,
                             size: 18,
                             color: Color(0xFF325483),
                           ),
                         ),
-                        TextSpan(text: ' Egypt', style: TextStyle(color: Color(0xFF325483), fontSize: 18)),
+                        TextSpan(text: ' ' + breed.origin, style: TextStyle(color: Color(0xFF325483), fontSize: 18)),
                       ],
                     ),
                   ),
                   Divider(),
-                  const Text("Intelligence: 5" , style: TextStyle(color: Color(0xFF325483), fontSize: 18),),
+                  Text("Intelligence: " + breed.intelligence.toString() , style: TextStyle(color: Color(0xFF325483), fontSize: 18),),
                 ],
               ),
             )

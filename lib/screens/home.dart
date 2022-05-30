@@ -1,6 +1,7 @@
 
 import 'package:catbreeds/controllers/home_controller.dart';
-import 'package:catbreeds/widgets/Breed.dart';
+import 'package:catbreeds/models/breed.dart';
+import 'package:catbreeds/widgets/breed_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -30,6 +31,9 @@ class Home extends StatelessWidget {
                   height: 70,
                   padding: const EdgeInsets.all(15),
                   child: TextField(
+                    onChanged: (text) {
+                      controller.handleSearch(text);
+                    },
                     cursorColor: Colors.deepPurple,
                     decoration: InputDecoration(
                       contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
@@ -41,15 +45,17 @@ class Home extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height - 230,
-                  child: ListView(
-                    scrollDirection: Axis.vertical,
-                    children: const [
-                      Breed(),
-                    ],
-                  ),
-                )
+                !controller.loading ?
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height - 230,
+                    child: ListView(
+                      scrollDirection: Axis.vertical,
+                      children: [
+                        for (Breed breed in controller.breedData)
+                          BreedCard(breed: breed)
+                      ],
+                    ),
+                  ) : Text("Loading")
               ],
             )
           ),

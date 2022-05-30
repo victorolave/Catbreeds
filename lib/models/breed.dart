@@ -20,6 +20,7 @@ class Breed {
   String vetstreetUrl;
   String vcaUrl;
   String wikipediaUrl;
+  String referenceImageId;
 
   Breed(
       {this.id,
@@ -42,29 +43,31 @@ class Breed {
       required this.cfaUrl,
       required this.vetstreetUrl,
       required this.vcaUrl,
-      required this.wikipediaUrl});
+      required this.wikipediaUrl,
+      required this.referenceImageId});
 
-  factory Breed.fromJson(Map<String, dynamic> json) {
+  factory Breed.fromJson(Map<String, dynamic> data) {
     return Breed(
-        image: json['image']['url'],
-        name: json['name'],
-        origin: json['origin'],
-        description: json['description'],
-        temperament: json['temperament'],
-        intelligence: json['intelligence'],
-        adaptability: json['adaptability'],
-        energyLevel: json['energy_level'],
-        affectiveLevel: json['affective_level'],
-        childFriendly: json['child_friendly'],
-        dogFriendly: json['dog_friendly'],
-        strangerFriendly: json['stranger_friendly'],
-        healthIssues: json['health_issues'],
-        socialNeeds: json['social_needs'],
-        grooming: json['grooming'],
-        lifeSpan: json['life_span'],
-        cfaUrl: json['cfa_url'],
-        vetstreetUrl: json['vetstreet_url'],
-        vcaUrl: json['vca_url'],
-        wikipediaUrl: json['wikipedia_url']);
+        image: data['image'] != null ? data['image']['url'] ?? '' : '',
+        name: data['name'],
+        origin: data['origin'],
+        description: data['description'],
+        temperament: data['temperament'],
+        intelligence: data['intelligence'],
+        adaptability: data['adaptability'],
+        energyLevel: data['energy_level'],
+        affectiveLevel: data['affection_level'],
+        childFriendly: data['child_friendly'],
+        dogFriendly: data['dog_friendly'],
+        strangerFriendly: data['stranger_friendly'],
+        healthIssues: data['health_issues'],
+        socialNeeds: data['social_needs'],
+        grooming: data['grooming'],
+        lifeSpan: data['life_span'],
+        cfaUrl: data['cfa_url'] ?? '',
+        vetstreetUrl: data['vetstreet_url'] ?? '',
+        vcaUrl: data['vcahospitals_url'] ?? '',
+        wikipediaUrl: data['wikipedia_url'] ?? '',
+        referenceImageId: data['reference_image_id'] ?? '');
   }
 }

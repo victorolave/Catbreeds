@@ -1,3 +1,4 @@
+import 'package:catbreeds/screens/breed.dart';
 import 'package:catbreeds/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       getPages: <GetPage>[
-        GetPage(name: '/', page: () => const Home())
+        GetPage(name: '/', page: () => const Home()),
+        GetPage(name: '/breed', page: () => const Breed())
       ],
 
     );

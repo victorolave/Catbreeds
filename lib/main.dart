@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       getPages: <GetPage>[
         GetPage(name: '/', page: () => const Home()),
-        GetPage(name: '/breed', page: () => const Breed())
+        GetPage(name: '/breed/:id', page: () => const Breed())
       ],
 
     );

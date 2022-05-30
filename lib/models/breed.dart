@@ -48,6 +48,7 @@ class Breed {
 
   factory Breed.fromJson(Map<String, dynamic> data) {
     return Breed(
+        id: data['id'],
         image: data['image'] != null ? data['image']['url'] ?? '' : '',
         name: data['name'],
         origin: data['origin'],

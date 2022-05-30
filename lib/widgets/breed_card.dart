@@ -12,7 +12,7 @@ class BreedCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.toNamed('/breed');
+        Get.toNamed('/breed/' + breed.id.toString());
       },
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
